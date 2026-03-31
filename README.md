@@ -92,5 +92,5 @@ Navigate to `http://127.0.0.1:8000/docs`
 
 ---
 
-**Author**: Abu-Taher01  
+**Author**: Abu-Taher01  (ABDULLAH AL MAMUN)
 **License**: MIT
