@@ -1,6 +1,6 @@
 # RAG Chatbot API
 
-A full-featured **Retrieval-Augmented Generation (RAG)** chatbot built with FastAPI, PostgreSQL, FAISS, and Groq LLM.
+A full-featured Retrieval-Augmented Generation (RAG) chatbot built with FastAPI, PostgreSQL, FAISS, and Groq LLM.
 
 ## ✨ Features
 
@@ -16,17 +16,17 @@ A full-featured **Retrieval-Augmented Generation (RAG)** chatbot built with Fast
 - **Backend**: FastAPI
 - **Database**: PostgreSQL + SQLAlchemy
 - **Vector Store**: FAISS (per-session indexing)
-- **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2`
+- **Embeddings**: sentence-transformers/all-MiniLM-L6-v2
 - **LLM**: Groq (Llama-3.1-8B-Instant)
 - **Document Processing**: pdfplumber, python-docx
 
 ## 📡 API Endpoints
 
-| Method | Endpoint                    | Description                              |
-|--------|-----------------------------|------------------------------------------|
-| POST   | `/upload/{session_id}`      | Upload document for a specific session   |
-| POST   | `/chat`                     | Chat with RAG support                    |
-| GET    | `/history/{session_id}`     | Get conversation history                 |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/upload/{session_id}` | Upload document for a specific session |
+| POST | `/chat` | Chat with RAG support |
+| GET | `/history/{session_id}` | Get conversation history |
 
 ### Example Request - Chat
 
@@ -36,54 +36,61 @@ A full-featured **Retrieval-Augmented Generation (RAG)** chatbot built with Fast
   "question": "What is the main topic discussed in the document?",
   "use_rag": true
 }
+```
 
-How to Run
+## 🚀 How to Run
 
-## 1. Clone the repository
-git clone <[https://github.com/Abu-Taher01/rag-chatbot]>
-cd RAG-CHATBOT
+### 1. Clone the repository
+```bash
+git clone https://github.com/Abu-Taher01/rag-chatbot
+cd rag-chatbot
+```
 
-## 2. Install dependencies
+### 2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-## 3. Create .env file with GROQ_API_KEY and PostgreSQL credentials
+### 3. Create .env file with GROQ_API_KEY and PostgreSQL credentials
+```
+GROQ_API_KEY=your_api_key_here
+DATABASE_URL=postgresql://user:password@localhost/rag_chatbot
+```
 
-## 4. Run the server
-uvicorn main:app --reload
+### 4. Run the server
+```bash
+uvicorn app.main:app --reload
+```
 
-## Test via Swagger UI at `http://127.0.0.1:8000/docs`
+### 5. Test via Swagger UI
+Navigate to `http://127.0.0.1:8000/docs`
 
+## 📁 Project Architecture
 
-# Project Architecture
+```
+├── main.py              → FastAPI application entry point
+├── chat.py              → Chat logic and database operations
+├── rag/                 → RAG pipeline (chunking, vector store, retrieval)
+├── faiss_index/         → Per-session FAISS indexes
+│   └── session_{session_id}/
+└── PostgreSQL           → Stores conversation history
+```
 
-## main.py → FastAPI application entry point
+## 🔑 Key Implementations
 
-## chat.py → Chat logic and database operations
+- Built complete RAG pipeline from scratch (without LangChain)
+- Implemented per-session FAISS indexing for user data isolation
+- Hybrid RAG with relevance checking
+- Clean separation between document processing and chat logic
 
-## rag/ → RAG pipeline (chunking, vector store, retrieval)
+## 🎯 Future Improvements
 
-## faiss_index/session_{session_id}/ → Per-session FAISS indexes
+- Background processing for large document uploads
+- Memory optimization for large ebooks
+- Migration to PGVector for better scalability
+- Docker + deployment on Render
 
-## PostgreSQL → Stores conversation history
+---
 
-
-# Key Implementations
-
-## Built complete RAG pipeline from scratch (without LangChain)
-
-## Implemented per-session FAISS indexing for user data isolation
-
-## Hybrid RAG with relevance checking
-
-## Clean separation between document processing and chat logic
-
-
-# Future Improvements
-
-## Background processing for large document uploads
-
-## Memory optimization for large ebooks
-
-## Migration to PGVector for better scalability
-
-## Docker + deployment on Render
+**Author**: Abu-Taher01  
+**License**: MIT
