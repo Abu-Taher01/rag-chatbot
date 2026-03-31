@@ -19,7 +19,7 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title = "RAG chatbot", 
               version = "1.0.0", 
-              description = "A simple RAG chatbot API built with FastAPI and SQLAlchemy")
+              description = "A RAG chatbot API built with FastAPI and SQLAlchemy")
 
 @app.get("/")
 def read_root():
