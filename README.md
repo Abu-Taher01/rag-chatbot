@@ -21,7 +21,7 @@ A full-featured Retrieval-Augmented Generation (RAG) chatbot built with FastAPI,
 - **Database**: PostgreSQL + SQLAlchemy
 - **Vector Store**: FAISS (per-session indexing)
 - **Embeddings**: sentence-transformers/all-MiniLM-L6-v2
-- **LLM**: Groq (Llama-3.1-8B-Instant)
+- **LLM**: Models via Groq api
 - **Document Processing**: pdfplumber, python-docx
 
 ## API Endpoints
