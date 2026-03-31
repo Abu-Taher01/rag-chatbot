@@ -35,9 +35,9 @@ A full-featured **Retrieval-Augmented Generation (RAG)** chatbot built with Fast
   "session_id": "abd12345",
   "question": "What is the main topic discussed in the document?",
   "use_rag": true
-}```
+}
 
-# How to Run
+How to Run
 
 ## 1. Clone the repository
 git clone <[https://github.com/Abu-Taher01/rag-chatbot]>
