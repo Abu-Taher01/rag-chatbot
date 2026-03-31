@@ -11,5 +11,3 @@ class Conversation(Base):
     role = Column(String, nullable=False)
     content = Column(Text)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    # updated_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'), onupdate=text('now()'))
-    # created_at = Column(DateTime, default=datetime.utcnow)

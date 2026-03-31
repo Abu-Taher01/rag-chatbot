@@ -26,7 +26,6 @@ async def validate_file(file: UploadFile):
     
     logger.info(f"File {file.filename} passed validation checks.")
     return content
-    # if file.size > MAX_FILE_SIZE:
 
 async def save_file(file: UploadFile, content: bytes) -> str:
     UPLOAD_DIR.mkdir(exist_ok=True)
@@ -35,8 +34,7 @@ async def save_file(file: UploadFile, content: bytes) -> str:
         logger.info(f"Saving file to: {file_path}")
         with open(file_path, "wb") as f:
             f.write(content)
-            # shutil.copyfileobj(file.file, f) is better for large files because it reads and writes the file in chunks, which can help to reduce memory usage and improve performance. When you use f.write(content), it reads the entire file into memory before writing it to disk, which can be inefficient for large files and may lead to memory errors. On the other hand, shutil.copyfileobj(file.file, f) allows you to copy the file in smaller chunks, which can help to avoid memory issues and improve the overall efficiency of the file upload process.
-    
+
     except Exception as e:
         logger.error(f"Error while saving the file: {e}")
         raise HTTPException(

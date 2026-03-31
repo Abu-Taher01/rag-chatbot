@@ -77,13 +77,13 @@ class TextChunker:
 # if __name__ == "__main__":
 #     chunker = TextChunker(chunk_size=200, chunk_overlap=30)
     
-#     sample_text = """Machine learning is a field of artificial intelligence.
+#     test_text = """Machine learning is a field of artificial intelligence.
 #     It allows computers to learn from data without being explicitly programmed.
 
 #     Deep learning is a subset of machine learning that uses neural networks with many layers.
 #     Transformers, introduced in 2017, revolutionized the field of NLP."""
     
-#     chunks = chunker.doc_chunker(sample_text, filename="sample.txt")
+#     chunks = chunker.doc_chunker(test_text, filename="test_text.txt")
     
 #     for i, chunk in enumerate(chunks):
 #         for key,value in chunk.items():

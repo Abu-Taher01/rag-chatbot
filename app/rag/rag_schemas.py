@@ -18,8 +18,5 @@ class RAGResponse(BaseModel):
     answer: str
     chunks: list[str]
     scores: list[float]
-
-# message : str
-# filename : str
-# chunk : int
-# total_chunks : int
+    class Config:
+        from_attributes = True

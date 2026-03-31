@@ -17,8 +17,6 @@ class VectorStore:
         logger.info(f"Loading embedding model: {embed_model}")
 
         self.embedder = SentenceTransformer(embed_model)
-        # self.index : Optional[faiss.Index] = None
-        # self.chunks : List[Dict[str,Any]] = []
 
         logger.info(f"Vector store initialized successfully with {embed_model}")
     
