@@ -1,4 +1,8 @@
 # RAG Chatbot API
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat&logo=python)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-336791?style=flat&logo=postgresql)](https://www.postgresql.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)]()
 
 A full-featured Retrieval-Augmented Generation (RAG) chatbot built with FastAPI, PostgreSQL, FAISS, and Groq LLM.
 
